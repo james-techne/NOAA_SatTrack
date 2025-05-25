@@ -1,4 +1,5 @@
 import datetime
+import gps_prn_L1
 
 # Installed PyGeodesy which should provide a lot of the coordinate system transforms
 # Need to figure out inputs sgp3 needs to project the position of the velocity based on the TLE
@@ -30,7 +31,7 @@ class Orbit(NamedTuple):
     epoch_year: float
     epoch_day: float
     inclination: float
-    ascencion: float
+    RAAN: float
     eccentricity: float
     perigee: float
     mean_anomaly: float
@@ -103,6 +104,9 @@ def tle_parser(tle_filepath):
 space_obj = tle_parser("noaa-19tle.txt")
 
 print(space_obj)
+
+prn1 = gps_prn_L1.generate_L1_prn(31)
+print(prn1[0:16])
 
 
 
