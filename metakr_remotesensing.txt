@@ -1,0 +1,7 @@
+\begindata
+KERNELS_TO_LOAD=(
+'./cassini_kernels/naif0009.tls',
+'./cassini_kernels/cas00084.tsc'
+)
+
+\begintext
